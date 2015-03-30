@@ -1,0 +1,43 @@
+def division_number(number):
+
+    num = 0
+    numbers = []
+
+    while number!=0:
+        num=number%10
+        numbers += [num]
+        number = number//10
+    return numbers
+
+def min_number(number):
+
+    number = division_number(number)
+
+    number = sorted(number)
+
+    return formation_number(number)
+
+def max_number(number):
+
+    number = division_number(number)
+
+    number = sorted(number,reverse = True)
+
+    return formation_number(number)
+
+def formation_number(number):
+
+    nums = 0
+
+    for num in number:
+        nums = nums*10+num
+
+    return nums
+        
+    
+
+
+n = 1958
+
+print("The max number is ",max_number(n))
+print("The main number is ",min_number(n))
